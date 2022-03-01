@@ -19,6 +19,11 @@ public class PacMan{
 	}
 
 	public boolean move() {
+		ArrayList<Location> moves = this.get_valid_moves();
+		if (moves.size() > 0) {
+			this.myLoc = moves.get(0);
+			return true;
+		}
 		return false;
 	}
 
