@@ -57,7 +57,8 @@ public class Map{
 		//use the setLocation method for the component to move it to the new location
 		return false;
 	}
-	
+
+	/* Jack's part */
 	public HashSet<Type> getLoc(Location loc) {
 		//wallSet and emptySet will help you write this method
 		return null;
