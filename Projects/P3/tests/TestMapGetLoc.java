@@ -6,6 +6,5 @@ import java.io.*;
 public class TestMapGetLoc {
 	
 	public void testMapGetLoc() {
-		return null;
 	}
 }
