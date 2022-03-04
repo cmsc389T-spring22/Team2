@@ -95,6 +95,7 @@ public class Map{
 	
 	public JComponent eatCookie(String name) {
 		if(components.get(name) instanceof CookieComponent){
+			this.cookies++;
 			return components.get(name);
 		} else {
 			return null;
