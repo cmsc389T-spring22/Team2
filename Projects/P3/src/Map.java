@@ -60,6 +60,10 @@ public class Map{
 
 	/* Jack's part */
 	public HashSet<Type> getLoc(Location loc) {
+		if(field.get(loc) == null){
+			return new HashSet<Type>();
+		}
+		
 		return field.get(loc);
 	}
 
