@@ -66,18 +66,18 @@ public class Map{
 	public boolean attack(String Name) {
 		//update gameOver
 		boolean attacked = false;
-		Location[] keys = (Location[])field.keySet().toArray();
+		Object[] keys = field.keySet().toArray();
 
 		Location pacmanLoc = null;
 
 		for(int i = 0; i < keys.length; i++) {
-			if(field.get(keys[i]).toArray()[0] == Type.PACMAN) {
-				pacmanLoc = (Location)field.get(keys[i]).toArray()[0];
+			if(field.get(keys[i]).contains(Type.PACMAN)) {
+				pacmanLoc = (Location)keys[i];
 			}
 		}
 
 		Location nameLoc = locations.get(Name);
-
+		if(nameLoc != null) {
 		if(
 			nameLoc.shift(0, 1).equals(pacmanLoc)
 			||
@@ -88,6 +88,7 @@ public class Map{
 			nameLoc.shift(-1, 0).equals(pacmanLoc)
 		){
 			attacked = true;	
+		}
 		}
 
 		return attacked;
