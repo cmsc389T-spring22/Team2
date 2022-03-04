@@ -28,7 +28,7 @@ public class PacMan{
 
 	public JComponent consume() { 
  		if(myMap.getLoc(myLoc).contains(Map.Type.COOKIE) ){
-			 return myMap.eatCookie("tok_x"+myLoc.x+"_y"+myLoc.y);
+			 return myMap.eatCookie("tok_x"+ myLoc.x +"_y"+ myLoc.y);
 		 }
 		 return null;
 	}
