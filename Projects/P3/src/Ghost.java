@@ -13,7 +13,18 @@ public class Ghost{
 	}
 
 	public ArrayList<Location> get_valid_moves() {
-		return null;
+		ArrayList<Location> output = new ArrayList<>();
+		output.add(new Location(this.myLoc.x + 1, this.myLoc.y));
+		output.add(new Location(this.myLoc.x - 1, this.myLoc.y));
+		output.add(new Location(this.myLoc.x, this.myLoc.y + 1));
+		output.add(new Location(this.myLoc.x, this.myLoc.y - 1));
+		for (int i = 0; i < output.size(); i++) {
+		   if (myMap.getLoc(output.get(i)).contains(Map.Type.WALL)) {
+			  output.remove(i);
+			  i--;
+		   }
+		}
+		return output;
 	}
 
 	public boolean move() {
