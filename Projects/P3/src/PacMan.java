@@ -30,6 +30,15 @@ public class PacMan{
 	}
 
 	public boolean move() {
+		ArrayList<Location> moves = this.get_valid_moves();
+		int sz = moves.size();
+		int idx = (int) Math.floor(Math.random()*sz);
+		if (moves.size() > 0) {
+			if (myMap.move("pacman", moves.get(idx), Map.Type.PACMAN)) {
+				this.myLoc = moves.get(idx);
+				return true;
+			}
+		}
 		return false;
 	}
 
