@@ -57,20 +57,52 @@ public class Map{
 		//use the setLocation method for the component to move it to the new location
 		return false;
 	}
-	
+
+	/* Jack's part */
 	public HashSet<Type> getLoc(Location loc) {
-		//wallSet and emptySet will help you write this method
-		return null;
+		if(field.get(loc) == null){
+			return new HashSet<Type>();
+		}
+		
+		return field.get(loc);
 	}
 
 	public boolean attack(String Name) {
 		//update gameOver
-		return false;
+		boolean attacked = false;
+		Location[] keys = (Location[])field.keySet().toArray();
+
+		Location pacmanLoc = null;
+
+		for(int i = 0; i < keys.length; i++) {
+			if(field.get(keys[i]).toArray()[0] == Type.PACMAN) {
+				pacmanLoc = (Location)field.get(keys[i]).toArray()[0];
+			}
+		}
+
+		Location nameLoc = locations.get(Name);
+
+		if(
+			nameLoc.shift(0, 1).equals(pacmanLoc)
+			||
+			nameLoc.shift(0, -1).equals(pacmanLoc)	
+			||
+			nameLoc.shift(1, 0).equals(pacmanLoc)
+			||
+			nameLoc.shift(-1, 0).equals(pacmanLoc)
+		){
+			attacked = true;	
+		}
+
+		return attacked;
 	}
 	
 	public JComponent eatCookie(String name) {
-		//update locations, components, field, and cookies
-		//the id for a cookie at (10, 1) is tok_x10_y1
-		return null;
+		if(components.get(name) instanceof CookieComponent){
+			this.cookies++;
+			return components.get(name);
+		} else {
+			return null;
+		}
 	}
 }
