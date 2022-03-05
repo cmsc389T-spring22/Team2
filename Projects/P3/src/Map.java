@@ -89,16 +89,46 @@ public class Map {
 
 	}
 
+	/* Jack's part */
+	public HashSet<Type> getLoc(Location loc) {
+		return field.get(loc);
+	}
+
+	public boolean attack(String Name) {
+		//update gameOver
+		boolean attacked = false;
+		Object[] keys = field.keySet().toArray();
+
+		Location pacmanLoc = null;
+
+		for(int i = 0; i < keys.length; i++) {
+			if(field.get(keys[i]).contains(Type.PACMAN)) {
+				pacmanLoc = (Location)keys[i];
+			}
+		}
+
+		Location nameLoc = locations.get(Name);
+		if(nameLoc != null) {
+		if(
+			nameLoc.shift(0, 1).equals(pacmanLoc)
+			||
+			nameLoc.shift(0, -1).equals(pacmanLoc)	
+			||
+			nameLoc.shift(1, 0).equals(pacmanLoc)
+			||
+			nameLoc.shift(-1, 0).equals(pacmanLoc)
+		){
+			attacked = true;	
+		}
+		}
+
+		return attacked;
+    
 	public HashSet<Type> getLoc(Location loc) {
 		// wallSet and emptySet will help you write this method
 		return null;
 	}
-
-	public boolean attack(String Name) {
-		// update gameOver
-		return false;
-	}
-
+    
 	public JComponent eatCookie(String name) {
 		// update locations, components, field, and cookies
 		// the id for a cookie at (10, 1) is tok_x10_y1
