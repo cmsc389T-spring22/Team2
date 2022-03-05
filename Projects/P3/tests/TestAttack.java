@@ -3,7 +3,6 @@ import java.awt.Color;
 import java.io.*;
 
 public class TestAttack extends TestCase {
-
 	public void testAttack() throws FileNotFoundException {
 		NoFrame frame = new NoFrame();
 
@@ -12,5 +11,6 @@ public class TestAttack extends TestCase {
 		PacMan pacman = frame.addPacMan(new Location(4, 6));
 
 		assertFalse(ghost.attack());
+
 	}
 }

@@ -14,6 +14,5 @@ public class TestGhostValidMoves extends TestCase {
         assertTrue(moves.size() == 2);
         assertTrue(moves.get(0).x == 2 && moves.get(0).y == 1);
         assertTrue(moves.get(1).x == 1 && moves.get(1).y == 2)
-
 	}
 }
