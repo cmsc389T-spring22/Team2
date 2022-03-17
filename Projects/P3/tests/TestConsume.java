@@ -17,7 +17,7 @@ public class TestConsume extends TestCase {
 		frame.startGame();
 		pacman.consume();
 
-		assertTrue(frame.getMap().getLoc(new Location(2, 2)).contains(Map.Type.COOKIE));
+		assertFalse(frame.getMap().getLoc(new Location(2, 2)).contains(Map.Type.COOKIE));
 
 	}
 }

@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 
 public class TestMapAttack extends TestCase{
 	
-	public void testMapEatCookie() throws FileNotFoundException{
+	public void testMapAttack() throws FileNotFoundException{
 		NoFrame frame1 = new NoFrame(); //Creates A New Map With Walls and Tokens w/o a Display
 
 		Location loc1 = new Location(5,1);
