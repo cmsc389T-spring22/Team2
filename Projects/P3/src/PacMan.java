@@ -27,6 +27,8 @@ public class PacMan{
 	}
 
 	public JComponent consume() { 
- 		return null;
+ 		if(myMap.contains(Map.Type.COOKIE) ){
+			 return myMap.eatCookie;
+		 }
 	}
 }
