@@ -56,6 +56,7 @@ public class Ghost {
 			if (myMap.getLoc(new Location(x, y)).contains(Map.Type.PACMAN))
 				return true;
 		}
+        return false;
 	}
 
 	public boolean attack() {

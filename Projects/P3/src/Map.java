@@ -90,8 +90,7 @@ public class Map {
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
-		//wallSet and emptySet will help you write this method
-		return null;
+		return field.get(loc) == null ? new HashSet<Type>() : field.get(loc);
 	}
 
 	public boolean attack(String Name) {
@@ -130,7 +129,9 @@ public class Map {
 		// the id for a cookie at (10, 1) is tok_x10_y1
 		if(components.get(name) instanceof CookieComponent){
 			this.cookies++;
-			return components.get(name);
+			JComponent out = components.get(name);
+            components.remove(name);
+            return out;
 		} else {
 			return null;
 		}
