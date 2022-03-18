@@ -53,45 +53,42 @@ public class Map {
 	}
 
 	public boolean move(String name, Location loc, Type type) {
-		// // update locations, components, and field
-		// // use the setLocation method for the component to move it to the new
-		// location
-		// Location l = locations.get(name);
-		// JComponent component = components.get(name);
+		// update locations, components, and field
+		// use the setLocation method for the component to move it to the new location
+		Location l = locations.get(name);
+		JComponent component = components.get(name);
 
-		// // ensure that the name is valid and maps to a location in locations
-		// if (l == null || component == null)
-		// return false;
+		// ensure that the name is valid and maps to a location in locations
+		if (l == null || component == null)
+			return false;
 
-		// // // ensure that type passed in matches type of component
-		// // if ((type == Type.PACMAN && !(component instanceof PacManComponent))
-		// // || (type == Type.GHOST && !(component instanceof GhostComponent))) {
-		// // return false;
-		// // }
+		// ensure that type passed in matches type of component
+		if ((type == Type.PACMAN && !(component instanceof PacManComponent))
+		|| (type == Type.GHOST && !(component instanceof GhostComponent))) {
+			return false;
+		}
 
-		// // checks if the move is valid
-		// boolean isValidMove = ((loc.x == l.x - 1 || loc.x == l.x + 1) && loc.y ==
-		// l.y)
-		// || ((loc.y == l.y - 1 || loc.y == l.y + 1) && loc.x == l.x);
+		// checks if the move is valid
+		boolean isValidMove = ((loc.x == l.x - 1 || loc.x == l.x + 1) && loc.y ==
+		l.y) || ((loc.y == l.y - 1 || loc.y == l.y + 1) && loc.x == l.x);
 
-		// if (!isValidMove)
-		// return false;
+		if (!isValidMove)
+			return false;
 
-		// // see what's at the desired destination location
-		// HashSet<Type> atLoc = getLoc(loc);
+		// see what's at the desired destination location
+		HashSet<Type> atLoc = getLoc(loc);
 
-		// // if there's a wall at the location, return false
-		// if (atLoc.contains(Type.WALL))
-		// return false;
+		// if there's a wall at the location, return false
+		if (atLoc.contains(Type.WALL))
+			return false;
 
-		// locations.put(name, loc);
-		// component.setLocation(loc.x, loc.y);
+		locations.put(name, loc);
+		component.setLocation(loc.x, loc.y);
 
-		// return true;
-
-		// uncomment all of above code to pass tests
 		return true;
 
+		// uncomment all of above code to pass tests
+		
 	}
 
 	public HashSet<Type> getLoc(Location loc) {
