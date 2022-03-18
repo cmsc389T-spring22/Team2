@@ -53,48 +53,56 @@ public class Map {
 	}
 
 	public boolean move(String name, Location loc, Type type) {
-		// update locations, components, and field
-		// use the setLocation method for the component to move it to the new location
-		Location l = locations.get(name);
-		JComponent component = components.get(name);
+		// // update locations, components, and field
+		// // use the setLocation method for the component to move it to the new
+		// location
+		// Location l = locations.get(name);
+		// JComponent component = components.get(name);
 
-		// ensure that the name is valid and maps to a location in locations
-		if (l == null || component == null)
-			return false;
-
-		// // ensure that type passed in matches type of component
-		// if ((type == Type.PACMAN && !(component instanceof PacManComponent))
-		// || (type == Type.GHOST && !(component instanceof GhostComponent))) {
+		// // ensure that the name is valid and maps to a location in locations
+		// if (l == null || component == null)
 		// return false;
-		// }
 
-		// checks if the move is valid
-		boolean isValidMove = ((loc.x == l.x - 1 || loc.x == l.x + 1) && loc.y == l.y)
-				|| ((loc.y == l.y - 1 || loc.y == l.y + 1) && loc.x == l.x);
+		// // // ensure that type passed in matches type of component
+		// // if ((type == Type.PACMAN && !(component instanceof PacManComponent))
+		// // || (type == Type.GHOST && !(component instanceof GhostComponent))) {
+		// // return false;
+		// // }
 
-		if (!isValidMove)
-			return false;
+		// // checks if the move is valid
+		// boolean isValidMove = ((loc.x == l.x - 1 || loc.x == l.x + 1) && loc.y ==
+		// l.y)
+		// || ((loc.y == l.y - 1 || loc.y == l.y + 1) && loc.x == l.x);
 
-		// see what's at the desired destination location
-		HashSet<Type> atLoc = getLoc(loc);
+		// if (!isValidMove)
+		// return false;
 
-		// if there's a wall at the location, return false
-		if (atLoc.contains(Type.WALL))
-			return false;
+		// // see what's at the desired destination location
+		// HashSet<Type> atLoc = getLoc(loc);
 
-		locations.put(name, loc);
-		component.setLocation(loc.x, loc.y);
+		// // if there's a wall at the location, return false
+		// if (atLoc.contains(Type.WALL))
+		// return false;
 
+		// locations.put(name, loc);
+		// component.setLocation(loc.x, loc.y);
+
+		// return true;
+
+		// uncomment all of above code to pass tests
 		return true;
 
 	}
-	
+
 	public HashSet<Type> getLoc(Location loc) {
-		return field.get(loc) == null ? new HashSet<Type>() : field.get(loc);
+        return new HashSet<Type>();
+		//return field.get(loc) == null ? new HashSet<Type>() : field.get(loc);
 	}
 
 	public boolean attack(String Name) {
+        return false;
 		//update gameOver
+        /*
 		boolean attacked = false;
 		Object[] keys = field.keySet().toArray();
 
@@ -108,32 +116,36 @@ public class Map {
 
 		Location nameLoc = locations.get(Name);
 		if(nameLoc != null) {
-		if(
-			nameLoc.shift(0, 1).equals(pacmanLoc)
-			||
-			nameLoc.shift(0, -1).equals(pacmanLoc)	
-			||
-			nameLoc.shift(1, 0).equals(pacmanLoc)
-			||
-			nameLoc.shift(-1, 0).equals(pacmanLoc)
-		){
-			attacked = true;	
-		}
+			if(
+				nameLoc.shift(0, 1).equals(pacmanLoc)
+				||
+				nameLoc.shift(0, -1).equals(pacmanLoc)	
+				||
+				nameLoc.shift(1, 0).equals(pacmanLoc)
+				||
+				nameLoc.shift(-1, 0).equals(pacmanLoc)
+			){
+				attacked = true;
+			}
 		}
 
 		return attacked;
+        */
 	}
 
 	public JComponent eatCookie(String name) {
 		// update locations, components, field, and cookies
 		// the id for a cookie at (10, 1) is tok_x10_y1
+        return components.get("tok_x1_y1");
+        /*
 		if(components.get(name) instanceof CookieComponent){
 			this.cookies++;
 			JComponent out = components.get(name);
-            components.remove(name);
-            return out;
+			components.remove(name);
+			return out;
 		} else {
 			return null;
 		}
+        */
 	}
 }

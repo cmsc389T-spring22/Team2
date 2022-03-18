@@ -10,14 +10,14 @@ public class TestConsume extends TestCase {
 
 
 		NoFrame frame = new NoFrame();
-		PacMan pacman = frame.addPacMan(new Location(2, 2));
+		PacMan pacman = frame.addPacMan(new Location(1, 1));
 		frame.initPlayers(); //Creates all of the players
 
 		//Start The Game
 		frame.startGame();
+        assertTrue(frame.getMap().getLoc(new Location(1, 1)).contains(Map.Type.COOKIE));
 		pacman.consume();
-
-		assertFalse(frame.getMap().getLoc(new Location(2, 2)).contains(Map.Type.COOKIE));
+		assertFalse(frame.getMap().getLoc(new Location(1, 1)).contains(Map.Type.COOKIE));
 
 	}
 }
