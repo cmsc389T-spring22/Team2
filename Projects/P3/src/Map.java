@@ -137,7 +137,7 @@ public class Map {
 		// update locations, components, field, and cookies
 		// the id for a cookie at (10, 1) is tok_x10_y1
         return components.get("tok_x1_y1");
-        /*
+        
 		if(components.get(name) instanceof CookieComponent){
 			this.cookies++;
 			JComponent out = components.get(name);
@@ -146,6 +146,6 @@ public class Map {
 		} else {
 			return null;
 		}
-        */
+       
 	}
 }
