@@ -95,8 +95,7 @@ public class Map {
 	}
 
 	public HashSet<Type> getLoc(Location loc) {
-        return new HashSet<Type>();
-		//return field.get(loc) == null ? new HashSet<Type>() : field.get(loc);
+		return field.get(loc) == null ? new HashSet<Type>() : field.get(loc);
 	}
 
 	public boolean attack(String Name) {
