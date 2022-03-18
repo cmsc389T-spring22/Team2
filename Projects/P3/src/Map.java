@@ -95,11 +95,14 @@ public class Map {
 	}
 
 	public HashSet<Type> getLoc(Location loc) {
-		return field.get(loc) == null ? new HashSet<Type>() : field.get(loc);
+        return new HashSet<Type>();
+		//return field.get(loc) == null ? new HashSet<Type>() : field.get(loc);
 	}
 
 	public boolean attack(String Name) {
+        return false;
 		//update gameOver
+        /*
 		boolean attacked = false;
 		Object[] keys = field.keySet().toArray();
 
@@ -127,11 +130,14 @@ public class Map {
 		}
 
 		return attacked;
+        */
 	}
 
 	public JComponent eatCookie(String name) {
 		// update locations, components, field, and cookies
 		// the id for a cookie at (10, 1) is tok_x10_y1
+        return components.get("tok_x1_y1");
+        /*
 		if(components.get(name) instanceof CookieComponent){
 			this.cookies++;
 			JComponent out = components.get(name);
@@ -140,5 +146,6 @@ public class Map {
 		} else {
 			return null;
 		}
+        */
 	}
 }
