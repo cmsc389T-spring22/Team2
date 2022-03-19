@@ -71,6 +71,6 @@ public class Ghost {
 		return false;
 
 		// uncomment all of above code to pass tests
-		return true;
+//		return true;
 	}
 }
