@@ -23,13 +23,207 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
       # Runs a set of commands using the runners shell
       - name: Compile java files
         run: |
             javac -version
             javac Projects/P3/src/*.java
 
+
+  TestPacManValidMoves:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: openjdk
+
+    steps:
+      - uses: actions/checkout@v2
+              
+      # Runs a set of commands using the runners shell
+      - name: TestPacManValidMoves
+        run: |
+            javac -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
+
+
+  TestPacManMove:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: openjdk
+
+    steps:
+      - uses: actions/checkout@v2
+              
+      # Runs a set of commands using the runners shell
+      - name: TestPacManMove
+        run: |
+            javac -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManMove
+
+
+  #--
+  TestPacManInRange:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: openjdk
+
+    steps:
+      - uses: actions/checkout@v2
+              
+      # Runs a set of commands using the runners shell
+      - name: TestPacManInRange
+        run: |
+            javac -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManInRange
+            
+  TestPacManConsume:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: openjdk
+
+    steps:
+      - uses: actions/checkout@v2
+              
+      # Runs a set of commands using the runners shell
+      - name: TestConsume
+        run: |
+            javac -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestConsume
+    
+  TestGhostValidMoves:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: openjdk
+
+    steps:
+      - uses: actions/checkout@v2
+              
+      # Runs a set of commands using the runners shell
+      - name: TestGhostValidMoves
+        run: |
+            javac -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves
+
+  TestGhostMove:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: openjdk
+
+    steps:
+      - uses: actions/checkout@v2
+              
+      # Runs a set of commands using the runners shell
+      - name: TestGhostMove 
+        run: |
+            javac -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostMove 
+
+  #--
+  TestGhostInRange:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: openjdk
+
+    steps:
+      - uses: actions/checkout@v2
+              
+      # Runs a set of commands using the runners shell
+      - name: TestGhostInRange 
+        run: |
+            javac -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostInRange
+
+
+  TestGhostAttack:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: openjdk
+
+    steps:
+      - uses: actions/checkout@v2
+              
+      # Runs a set of commands using the runners shell
+      - name: TestAttack
+        run: |
+            javac -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestAttack
+
+  TestMapMove:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: openjdk
+
+    steps:
+      - uses: actions/checkout@v2
+              
+      # Runs a set of commands using the runners shell
+      - name: TestMapMove
+        run: |
+            javac -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMove
+
+  #--
+  TestMapGetLoc:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: openjdk
+
+    steps:
+      - uses: actions/checkout@v2
+              
+      # Runs a set of commands using the runners shell
+      - name: TestMapGetLoc
+        run: |
+            javac -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapGetLoc
+
+  TestMapAttack:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: openjdk
+
+    steps:
+      - uses: actions/checkout@v2
+              
+      # Runs a set of commands using the runners shell
+      - name: TestMapAttack
+        run: |
+            javac -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapAttack
+
+  TestMapEatCookie:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: openjdk
+
+    steps:
+      - uses: actions/checkout@v2
+              
+      # Runs a set of commands using the runners shell
+      - name: TestMapEatCookie
+        run: |
+            javac -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapEatCookie
+            
+    # -a----         3/17/2022   2:26 PM            405 TestAttack.java
+    # -a----         3/18/2022   6:54 PM            927 TestConsume.class
+    # -a----         3/18/2022   7:02 PM            553 TestConsume.java
+    # -a----         3/18/2022   6:54 PM            784 TestGhostInRange.class
+    # -a----         3/17/2022   2:26 PM            553 TestGhostInRange.java
+    # -a----         3/18/2022   6:54 PM            729 TestGhostMove.class
+    # -a----         3/17/2022   2:34 PM            471 TestGhostMove.java
+    # -a----         3/18/2022   6:54 PM           1000 TestGhostValidMoves.class
+    # -a----         3/17/2022   2:36 PM            642 TestGhostValidMoves.java
+    # -a----         3/18/2022   6:54 PM            986 TestMapAttack.class
+    # -a----         3/17/2022   2:53 PM            746 TestMapAttack.java
+    # -a----         3/18/2022   6:54 PM            684 TestMapEatCookie.class
+    # -a----         3/17/2022   3:01 PM            492 TestMapEatCookie.java
+    # -a----         3/18/2022   6:54 PM            822 TestMapGetLoc.class
+    # -a----         3/17/2022   3:03 PM            707 TestMapGetLoc.java
+    # -a----         3/18/2022   6:54 PM           1005 TestMapMove.class
+    # -a----         3/17/2022   2:26 PM            815 TestMapMove.java
+    # -a----         3/18/2022   6:54 PM            778 TestPacManInRange.class
+    # -a----         3/17/2022   2:19 PM            866 TestPacManInRange.java
+    # -a----         3/18/2022   6:54 PM            945 TestPacManMove.class
+    # -a----         3/17/2022   2:19 PM           1124 TestPacManMove.java
+    # -a----         3/18/2022   6:54 PM            902 TestPacManValidMoves.class
+    # -a----         3/17/2022   2:18 PM           1053 TestPacManValidMoves.java
