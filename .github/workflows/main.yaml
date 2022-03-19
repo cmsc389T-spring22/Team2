@@ -57,8 +57,9 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: TestPacManMove
         run: |
-            javac -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-            java -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestPacManMove
+            cd Projects/P3
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestPacManMove
 
 
   #--
@@ -73,8 +74,9 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: TestPacManInRange
         run: |
-            javac -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" Projects/P3/src/*.java Projects/P3/tests/*.java
-            java -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManInRange
+            cd Projects/P3
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManInRange
             
   TestPacManConsume:
     # The type of runner that the job will run on
@@ -87,8 +89,9 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: TestConsume
         run: |
-            javac -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" Projects/P3/src/*.java Projects/P3/tests/*.java
-            java -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestConsume
+            cd Projects/P3
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestConsume
     
   TestGhostValidMoves:
     # The type of runner that the job will run on
@@ -101,8 +104,9 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: TestGhostValidMoves
         run: |
-            javac -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" Projects/P3/src/*.java Projects/P3/tests/*.java
-            java -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves
+            cd Projects/P3
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves
 
   TestGhostMove:
     # The type of runner that the job will run on
@@ -115,8 +119,9 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: TestGhostMove 
         run: |
-            javac -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" Projects/P3/src/*.java Projects/P3/tests/*.java
-            java -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostMove 
+            cd Projects/P3
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostMove 
 
   #--
   TestGhostInRange:
@@ -130,8 +135,9 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: TestGhostInRange 
         run: |
-            javac -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" Projects/P3/src/*.java Projects/P3/tests/*.java
-            java -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostInRange
+            cd Projects/P3
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostInRange
 
 
   TestGhostAttack:
@@ -145,8 +151,9 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: TestAttack
         run: |
-            javac -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" Projects/P3/src/*.java Projects/P3/tests/*.java
-            java -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestAttack
+            cd Projects/P3
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestAttack
 
   TestMapMove:
     # The type of runner that the job will run on
@@ -159,8 +166,9 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: TestMapMove
         run: |
-            javac -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" Projects/P3/src/*.java Projects/P3/tests/*.java
-            java -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMove
+            cd Projects/P3
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMove
 
   #--
   TestMapGetLoc:
@@ -174,8 +182,9 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: TestMapGetLoc
         run: |
-            javac -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" Projects/P3/src/*.java Projects/P3/tests/*.java
-            java -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapGetLoc
+            cd Projects/P3
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapGetLoc
 
   TestMapAttack:
     # The type of runner that the job will run on
@@ -188,8 +197,9 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: TestMapAttack
         run: |
-            javac -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" Projects/P3/src/*.java Projects/P3/tests/*.java
-            java -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapAttack
+            cd Projects/P3
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapAttack
 
   TestMapEatCookie:
     # The type of runner that the job will run on
@@ -202,8 +212,9 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: TestMapEatCookie
         run: |
-            javac -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" Projects/P3/src/*.java Projects/P3/tests/*.java
-            java -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapEatCookie
+            cd Projects/P3
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapEatCookie
             
     # -a----         3/17/2022   2:26 PM            405 TestAttack.java
     # -a----         3/18/2022   6:54 PM            927 TestConsume.class
