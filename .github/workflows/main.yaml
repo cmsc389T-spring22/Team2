@@ -41,8 +41,9 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: TestPacManValidMoves
         run: |
-            javac -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" Projects/P3/src/*.java Projects/P3/tests/*.java
-            java -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
+            cd Projects/P3
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestPacManValidMoves
 
 
   TestPacManMove:
