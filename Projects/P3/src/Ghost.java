@@ -67,10 +67,10 @@ public class Ghost {
 
 	public boolean attack() {
 
-		// if (is_pacman_in_range()) {
-		// return myMap.attack(myName);
-		// }
-		// return false;
+		if (is_pacman_in_range()) {
+		return myMap.attack(myName);
+		}
+		return false;
 
 		// uncomment all of above code to pass tests
 		return true;
