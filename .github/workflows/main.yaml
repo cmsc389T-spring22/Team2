@@ -76,7 +76,7 @@ jobs:
         run: |
             cd Projects/P3
             javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManInRange
+            java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestPacManInRange
             
   TestPacManConsume:
     # The type of runner that the job will run on
@@ -91,7 +91,7 @@ jobs:
         run: |
             cd Projects/P3
             javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestConsume
+            java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestConsume
     
   TestGhostValidMoves:
     # The type of runner that the job will run on
@@ -106,7 +106,7 @@ jobs:
         run: |
             cd Projects/P3
             javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves
+            java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestGhostValidMoves
 
   TestGhostMove:
     # The type of runner that the job will run on
@@ -121,7 +121,7 @@ jobs:
         run: |
             cd Projects/P3
             javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostMove 
+            java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestGhostMove 
 
   #--
   TestGhostInRange:
@@ -137,7 +137,7 @@ jobs:
         run: |
             cd Projects/P3
             javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostInRange
+            java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestGhostInRange
 
 
   TestGhostAttack:
@@ -153,7 +153,7 @@ jobs:
         run: |
             cd Projects/P3
             javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestAttack
+            java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestAttack
 
   TestMapMove:
     # The type of runner that the job will run on
@@ -168,7 +168,7 @@ jobs:
         run: |
             cd Projects/P3
             javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapMove
+            java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestMapMove
 
   #--
   TestMapGetLoc:
@@ -184,7 +184,7 @@ jobs:
         run: |
             cd Projects/P3
             javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapGetLoc
+            java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestMapGetLoc
 
   TestMapAttack:
     # The type of runner that the job will run on
@@ -199,7 +199,7 @@ jobs:
         run: |
             cd Projects/P3
             javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapAttack
+            java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestMapAttack
 
   TestMapEatCookie:
     # The type of runner that the job will run on
@@ -214,7 +214,7 @@ jobs:
         run: |
             cd Projects/P3
             javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapEatCookie
+            java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestMapEatCookie
             
     # -a----         3/17/2022   2:26 PM            405 TestAttack.java
     # -a----         3/18/2022   6:54 PM            927 TestConsume.class
