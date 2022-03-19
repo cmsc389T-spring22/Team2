@@ -50,8 +50,7 @@ public class PacMan{
 		locations.add(new Location(this.myLoc.x - 1, this.myLoc.y));
 		locations.add(new Location(this.myLoc.x, this.myLoc.y + 1));
 		locations.add(new Location(this.myLoc.x, this.myLoc.y - 1));
-		//for (int i = 0; i < locations.size(); i++) { //<- This is the correct one. Change it to this to fix failures in TestPacManInRange.java
-        for (int i = locations.size(); i < locations.size(); i++) {
+		for (int i = 0; i < locations.size(); i++) { 
 			if (myMap.getLoc(locations.get(i)) != null && myMap.getLoc(locations.get(i)).contains(Map.Type.GHOST)) {
 				return true;
 			}

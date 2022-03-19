@@ -96,9 +96,7 @@ public class Map {
 	}
 
 	public boolean attack(String Name) {
-        return false;
 		//update gameOver
-        /*
 		boolean attacked = false;
 		Object[] keys = field.keySet().toArray();
 
@@ -126,7 +124,6 @@ public class Map {
 		}
 
 		return attacked;
-        */
 	}
 
 	public JComponent eatCookie(String name) {
