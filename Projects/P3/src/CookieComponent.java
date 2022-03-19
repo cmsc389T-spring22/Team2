@@ -29,8 +29,9 @@ public class CookieComponent extends JComponent{
 		g2.fill(wall);
 		
 	}
+	// uncomment to fix lolllllll
 	public void setLocation(int x, int y) {
-		super.setLocation(scale*x+scale/4, scale*y+scale/4);
+		//super.setLocation(scale*x+scale/4, scale*y+scale/4);
 	} 
 	
 }
