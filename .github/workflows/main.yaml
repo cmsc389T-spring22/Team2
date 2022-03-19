@@ -58,7 +58,7 @@ jobs:
       - name: TestPacManMove
         run: |
             javac -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" Projects/P3/src/*.java Projects/P3/tests/*.java
-            java -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManMove
+            java -cp "Projects/P3/tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestPacManMove
 
 
   #--
